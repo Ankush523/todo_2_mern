@@ -3,8 +3,19 @@ const Schema = mongoose.Schema
 
 const TodoSchema = new Schema({
     text : {
-        
+        type: String,
+        required : true
     },
-    complete,
-    timestamp,
+    complete : {
+        type : Boolean,
+        dafault : false
+    },
+    timestamp : {
+        type : String,
+        dafault : Date.now()
+    },
 }) 
+
+ const Todo = mongoose.model("Todo", TodoSchema)
+
+ module.exports = Todo
